@@ -14,7 +14,7 @@ function trendsCurrentSlide(n) {
 }
 function trendsShowSlides(n) {
   let i;
-  const slides = document.getElementsByClassName("trends--item");
+  const slides = document.getElementsByClassName("trends__item");
   if (n > slides.length) {trendsSlideIndex = 1}    
   if (n < 1) {trendsSlideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
@@ -39,7 +39,7 @@ function examplesCurrentSlide(n) {
 
 function examplesShowSlides(n) {
   let i;
-  const slides = document.getElementsByClassName("examples--item");
+  const slides = document.getElementsByClassName("example");
   if (n > slides.length) {examplesSlideIndex = 1}    
   if (n < 1) {examplesSlideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
@@ -135,7 +135,7 @@ const answerTheQuestion = (questionNumber, answer) => {
 
     // Отобразить кнопку "следующий вопрос" / "показать результаты"
     if (questions[questionNumber - 1].isQuestionPassed === true && questionNumber !== questions.length) {
-      document.getElementById(`question${questionNumber}-next`).style.display = 'block'
+      document.getElementById(`question${questionNumber}-slider__next-btn`).style.display = 'block'
     } else if (questions[questionNumber - 1].isQuestionPassed === true && questionNumber === questions.length) {
       document.getElementById('finishQuiz').style.display = 'block'
     }
@@ -143,7 +143,7 @@ const answerTheQuestion = (questionNumber, answer) => {
 }
 
 // Перейти к следующему вопросу 
-const showNextQuestion = () => {
+const showslider__next-btnQuestion = () => {
   currentQuestion += 1
 
   let i = 1
@@ -237,7 +237,7 @@ const startTheQuizAgain = () => {
     }
 
     if (i + 1 < 7) {
-      document.getElementById(`question${i + 1}-next`).style.display = 'none'
+      document.getElementById(`question${i + 1}-slider__next-btn`).style.display = 'none'
     }
 
     i++
